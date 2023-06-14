@@ -11,6 +11,8 @@ public class BasicPlayerMovement : MonoBehaviour
     private bool isGrounded = true;
     private Rigidbody2D rb;
 
+    public int coins = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +38,15 @@ public class BasicPlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        string collisionTag = collision.tag;
+        switch (collisionTag)
         {
-            isGrounded = true;
+            case "Ground":
+                isGrounded = true;
+                break;
+            case "Coin":
+                collectCoin(collision.gameObject);
+                break;
         }
     }
 
@@ -50,4 +58,9 @@ public class BasicPlayerMovement : MonoBehaviour
         }
     }
 
+    void collectCoin(GameObject coin)
+    {
+        coins += coin.GetComponent<CoinScript>().value;
+        GameObject.Destroy(coin);
+    }
 }
