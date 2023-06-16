@@ -1,37 +1,43 @@
 # undefined-work-game
 A video game you can play at work
 
-The Game:
-A simple platformer game that will make you look like you work but you are playing.
 
-Story line:
-To be decided...
+# The Game - Full Description
 
-Tasks (POC):
-1.	Platforms - the platforms of this game will be lines of code.
-Create platforms that are lines of code.
-The code will be taken from a file (example.js or something similar).
-The platforms and their line of code will be visible in the editor.
-The basic Idea:
-Rectangle sprite that has text (text mesh pro) as it`s child.
-The sprite will be invisible (besides the text) and will have a collider.
-For example:   will be the text in the platform, and you can stand on this line of code.
-The changes will be visible throw a costume editor - when the scale (size) of the platform is changed, the code inside the platform will change.
-For the code to be continues, a static variable will be saved to indicate the last index of text read inside the code. (ex, if the first platform is able to hold 10 characters, the second one will start from the 11th character).
-Another idea (Amit), use fit font (wrap) and check where the max font is. When the font changes (becomes smaller), that means that the text is wrapped and we got overflow.
+ 
+## The concept:
+A platformer game where you need to go back to previous levels to get thing that helps you in the current level.
 
-2.	Player movement - for the start, we need a basic player movement.
-The player movement includes walking (horizontal) and jumping (only when grounded).
+## Basic Levels
+0. Introduction level. Basic platformer without any items. There will be an opened door that you need to pass in order to finish the level.
+1. Simple platforms level without enemies.
+The level will have a green key and a green door.
+You need to get the green key to open the green door.
+After the green door is opened, you go throw that door to complete the level.
+2. Same as the previous level, but we include enemies that you need to handle (jump over \ kill).
+3. In this level we introduce the main concept of the game - multiple levels. In this level, we have a green door without a green key to open it. The player will need to go to the first level, get the key, and come back to the third level to finish it with this key.
+4. More to come... with abilities and other cool things.
 
-3.	Camera movement - The camera follows the player only on the vertical axis (up and down).
-Try to look at Brackys` tutorials to find some ideas for that.
+### Tasks:
 
-4.	Enemies - simple bugs. The enemies walk right and left and changes direction when encounter an edge. The enemies` speed is slower than the player`s.
+- [x] Basic platformer.
+- [x] Player movement.
+- [x] Basic enemy.
+- [x] Camera movement.
+- [ ] Enemy sprite.
+- [ ] Player sprite.
+- [ ] Keys and doors. 
+- [ ] Make a scene with level 1.
+- [ ] Make level 2.
+- [ ] Make level 3.
+- [ ] Levels as files sidebar menu.
+- [ ] Open level 1 and 3 in the same time.
 
 
-For later:
+### For later:
 *	Enable costume levels (levels editor).
 *	Change the code (costume file).
 *	Special levels in the hierarchy and terminal.
-*	Special movements with C, V, X, and more…
+*	Special movements with C, V, X, and more...
+
 
